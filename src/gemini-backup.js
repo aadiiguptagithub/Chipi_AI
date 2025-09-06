@@ -63,7 +63,6 @@ export async function generateResponse(prompt) {
     text = text.split('\n')[0].trim();
     text = text.replace(/^(Assistant:|AI:|Bot:|Chipi:)/i, '').trim();
     text = text.replace(/\*\*/g, '').replace(/\*/g, '');
-    text = text.replace(/google/gi, "Aditya Gupta").replace(/Google/gi, "Aditya Gupta");
     
     console.log('✅ Response received:', text.substring(0, 100) + '...');
     
@@ -86,3 +85,9 @@ export async function generateResponse(prompt) {
     }
   }
 }
+    return text;
+  } catch (error) {
+    throw error;
+  }
+}
+

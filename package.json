@@ -1,13 +1,33 @@
 {
-  "name": "chipi-ai",
-  "private": true,
-  "version": "0.0.0",
+  "name": "chipi-ai-assistant",
+  "description": "An advanced AI-powered voice assistant with a futuristic interface",
+  "version": "1.0.0",
   "type": "module",
+  "author": "Aditya Gupta",
+  "license": "MIT",
+  "homepage": "https://github.com/aadiiguptagithub/Chipi-virtual-assistant",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aadiiguptagithub/Chipi-virtual-assistant.git"
+  },
+  "keywords": [
+    "ai",
+    "voice-assistant",
+    "react",
+    "gemini-ai",
+    "speech-recognition",
+    "text-to-speech",
+    "virtual-assistant"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "serve": "vite preview --port 3000",
+    "clean": "rm -rf dist node_modules",
+    "reinstall": "npm run clean && npm install",
+    "check": "npm run lint && npm run build"
   },
   "dependencies": {
     "@google/genai": "^1.16.0",
