@@ -136,6 +136,22 @@ function UserContext({ children }) {
   };
 
   async function takeCommand(transcript) {
+    // Name questions
+    if (transcript.includes("what is your name") || 
+        transcript.includes("what's your name") || 
+        transcript.includes("who are you") ||
+        transcript.includes("tumhara naam kya hai") ||
+        transcript.includes("aapka naam kya hai") ||
+        transcript.includes("your name") ||
+        transcript.includes("naam kya hai")) {
+      const message = "My name is Chipi. I'm your virtual AI assistant created by Aditya Gupta.";
+      setPrompt(message);
+      setResponses(true);
+      speak(message);
+      setTimeout(() => setSpeaking(false), 2000);
+      return true;
+    }
+    
     if (transcript.includes("weather") || transcript.includes("temperature")) {
       const weatherInfo = await getWeatherInfo();
       setPrompt(weatherInfo);

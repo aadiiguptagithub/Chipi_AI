@@ -11,27 +11,20 @@ export default defineConfig({
     assetsDir: 'assets',
     sourcemap: false,
     minify: 'terser',
-    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
-          icons: ['react-icons'],
-          ai: ['@google/generative-ai']
         },
       },
     },
   },
   server: {
     port: 3000,
-    host: true,
-    open: true
+    host: true
   },
   preview: {
     port: 3000,
     host: true
-  },
-  optimizeDeps: {
-    include: ['react', 'react-dom', '@google/generative-ai', 'react-icons']
   }
 })
