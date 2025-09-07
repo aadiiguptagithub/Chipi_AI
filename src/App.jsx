@@ -5,8 +5,6 @@ import "./App.css";
 import va from "./assets/ai.png";
 import { FaMicrophone } from 'react-icons/fa';
 import { CiMicrophoneOn } from 'react-icons/ci';
-import speakimg from "./assets/speak.gif";
-import aigif from "./assets/aiVoice.gif";
 
 export default function App() {
   let { recognition, Speaking, setSpeaking, prompt, responses, setPrompt, setResponses, avatarState } = useContext(dataContext);
@@ -46,9 +44,26 @@ export default function App() {
       ) : (
         <div className='response'>
           {!responses ? (
-            <img src={speakimg} alt="" id='speak' />
+            <img 
+            id='speak'
+              src="/speak.gif" 
+              alt="Listening..." 
+              className="speak-gif"
+              onError={(e) => {
+                console.error('Failed to load speak.gif');
+                e.target.style.display = 'none';
+              }}
+            />
           ) : (
-            <img src={aigif} alt="" className='aigif' />
+            <img 
+              src="/aiVoice.gif" 
+              alt="AI Speaking..." 
+              className="aigif"
+              onError={(e) => {
+                console.error('Failed to load aiVoice.gif');
+                e.target.style.display = 'none';
+              }}
+            />
           )}
           <p>{prompt}</p>
         </div>
