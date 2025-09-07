@@ -2,11 +2,11 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // Enhanced API key handling for production
 const getApiKey = () => {
-  const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+  const apiKey = import.meta.env.VITE_AI_API;
   
   if (!apiKey) {
     console.error('❌ Gemini API key not found in environment variables');
-    throw new Error('API key not configured. Please set VITE_GEMINI_API_KEY in your environment.');
+    throw new Error('API key not configured. Please set VITE_AI_API in your environment.');
   }
   
   console.log('✅ API Key loaded successfully');

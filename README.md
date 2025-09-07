@@ -91,7 +91,7 @@ yarn install
 touch .env
 
 # Add your Gemini API key
-echo "VITE_GEMINI_API_KEY=your_api_key_here" > .env
+echo "VITE_AI_API=your_api_key_here" > .env
 ```
 
 4. **Get Gemini API Key**
@@ -183,7 +183,7 @@ chipi-ai-assistant/
 
 ### **Environment Variables**
 ```env
-VITE_GEMINI_API_KEY=your_gemini_api_key_here
+VITE_AI_API=your_gemini_api_key_here
 ```
 
 ### **Voice Settings**
@@ -216,7 +216,7 @@ utterance.volume = 1.0;  // Volume level (0.0 - 1.0)
 ### **Vercel Deployment**
 1. Push your code to GitHub
 2. Connect your GitHub repository to Vercel
-3. Add environment variable `VITE_GEMINI_API_KEY` in Vercel dashboard
+3. Add environment variable `VITE_AI_API` in Vercel dashboard
 4. Deploy automatically
 
 ### **Manual Build**
@@ -374,7 +374,7 @@ yarn install
 touch .env
 
 # Add your Gemini API key
-echo "VITE_GEMINI_API_KEY=your_api_key_here" > .env
+echo "VITE_AI_API=your_api_key_here" > .env
 ```
 
 4. **Get Gemini API Key**
@@ -466,7 +466,7 @@ chipi-ai-assistant/
 
 ### **Environment Variables**
 ```env
-VITE_GEMINI_API_KEY=your_gemini_api_key_here
+VITE_AI_API=your_gemini_api_key_here
 ```
 
 ### **Voice Settings**
