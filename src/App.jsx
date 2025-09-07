@@ -1,5 +1,5 @@
 
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { dataContext } from './assets/context/UserContext.jsx';
 import "./App.css";
 import va from "./assets/ai.png";
@@ -9,34 +9,7 @@ import speakimg from "./assets/speak.gif";
 import aigif from "./assets/aiVoice.gif";
 
 export default function App() {
-  let { recognition, Speaking, setSpeaking, prompt, responses, setPrompt, setResponses, avatarState, speak } = useContext(dataContext);
-
-  // Browser compatibility check
-  useEffect(() => {
-    const checkBrowserSupport = () => {
-      const isSupported = {
-        speechRecognition: 'webkitSpeechRecognition' in window || 'SpeechRecognition' in window,
-        speechSynthesis: 'speechSynthesis' in window,
-        https: window.location.protocol === 'https:' || window.location.hostname === 'localhost'
-      };
-      
-      console.log('🔍 Browser Support Check:', isSupported);
-      
-      if (!isSupported.speechRecognition) {
-        console.warn('⚠️ Speech Recognition not supported in this browser');
-      }
-      
-      if (!isSupported.speechSynthesis) {
-        console.warn('⚠️ Speech Synthesis not supported in this browser');
-      }
-      
-      if (!isSupported.https && window.location.hostname !== 'localhost') {
-        console.warn('⚠️ HTTPS required for speech features in production');
-      }
-    };
-    
-    checkBrowserSupport();
-  }, []);
+  let { recognition, Speaking, setSpeaking, prompt, responses, setPrompt, setResponses, avatarState } = useContext(dataContext);
 
   return (
     <div className="app-bg">
